@@ -1,0 +1,38 @@
+<header>
+    <h1>Finstagram</h1>
+</header>
+<main role="main">
+    <% @posts.each do |post| %>
+        <article class="post">
+            <div class="user-info">
+                <a class="thumb" href="<%= post[:avatar_url] %>">
+                    <img class="thumbnail" 
+                    src="<%= post[:avatar_url] %>"
+                    alt="<%= post[:username] %>">
+                </a>
+                <h2><a class="username" href="#"><%= post[:username] %></a></h2>
+                <h3><a class="timeAgo" href="#"><%= post[:humanized_time_ago]%></a></h3>
+            </div>
+            <a class="photo" href="#">
+                <img src="<%= post[:photo_url] %>" alt="post from <%= post[:username] %>">
+            </a>
+            <div class="actions">
+                <span class="likes"><%= post[:like_count] %> <%= getLikeOrLikes(post[:like_count]) %></span>
+                <span class="comment-count"><%= post[:comment_count] %> <%= getCommentOrComments(post[:comment_count]) %></span>
+            </div>
+            <ul class="comments">
+
+                <% post[:comments].each do |entry| %>
+                    <li>
+                        <p>
+                            <span class="posterName"> <%= entry[:username] %> </span>
+                            <span class="bodyText">: <%= entry[:text] %></span>
+                        </p>
+                    </li>
+                    <% end %>
+            </ul>
+        </article>
+
+        <% end %>
+
+</main>

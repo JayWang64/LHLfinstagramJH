@@ -1,0 +1,83 @@
+
+.timeAgo,
+.likes,
+.comment-count{
+  color:gray;
+}
+
+.timeAgo:hover{
+  text-decoration: underline;
+}
+
+header {
+  background-color: #244751;
+  color: #E8FDFF;
+}
+
+header h1 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  background-color: whitesmoke;
+  /*background-color: yellow;*/
+}
+
+main {
+  background-color: white;
+  padding: 16px;
+  margin-top: 10px;
+  border-radius: 15px;
+  font-family: 'Roboto', sans-serif;
+  /*color: black;*/
+}
+
+.posterName{
+  font-weight: bold;
+}
+
+.bodyText{
+  color:black;
+}
+
+
+.post {
+  margin-bottom: 50px;
+}
+
+.post .user-info img {
+  border-radius: 50%;
+}
+
+.post .photo img {
+  border-radius: 15px;
+}
+
+.hashtag {
+  color: blue;
+}
+
+.hashtag:visted {
+  color: lime;
+}
+
+.username:active,
+.likes:active,
+.posterName:active {
+  color: red;
+}
+
+.comment-count:active,
+.hashtag:active {
+  color: red;
+}
+
+.hashtag:hover,
+.comment-count:hover,
+.username:hover,
+.likes:hover,
+.posterName:hover {
+text-decoration: underline;
+ /* font-weight: bold; */
+}

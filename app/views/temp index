@@ -1,0 +1,113 @@
+    <header>
+        <h1>Finstagram</h1>
+    </header>
+    <%= @post_shark[:comments][0][:username] %>
+    <%= @post_shark[:comments][1][:username] %>
+    <main role="main">
+        
+        <article class="post">
+            <div class="user-info">
+                <a class="thumb" href="<%= @post_shark[:avatar_url] %>">
+                    <img class="thumbnail" 
+                    src="<%= @post_shark[:avatar_url] %>"
+                    alt="<%= @post_shark[:username] %>">
+                </a>
+                <h2><a class="username" href="#"><%= @post_shark[:username] %></a></h2>
+                <h3><a class="timeAgo" href="#"><%= @post_shark[:humanized_time_ago]%></a></h3>
+            </div>
+            <a class="photo" href="#">
+                <img src="<%= @post_shark[:photo_url] %>" alt="post from <%= @post_shark[:username] %>">
+            </a>
+            <div class="actions">
+                <span class="likes"><%= @post_shark[:like_count] %> <%= getLikeOrLikes(@post_shark[:like_count]) %></span>
+                <span class="comment-count"><%= @post_shark[:comment_count] %> <%= getCommentOrComments(@post_shark[:comment_count]) %></span>
+            </div>
+            <ul class="comments">
+                
+                <% @post_shark[:comments].each do |entry| %>
+                    <li>
+                        <p>
+                            <span class="posterName"> <%= entry[:username] %> </span>
+                            <span class="bodyText">: <%= entry[:text] %></span>
+                        </p>
+                    </li>
+                <% end %>
+            </ul>
+        </article>
+        
+        <article class="post">
+            <div class="user-info">
+                <a class="thumb" href="#">
+                    <img class="thumbnail" src="http://naserca.com/images/kirk_whalum.jpg" alt="kirk_whalum">
+                </a>
+                <h2 class="username">kirk_whalum</h2>
+                <h3 class="timeAgo">1 hour ago</h3>
+            </div>
+            <a class="photo" href="#">
+                <img src="http://naserca.com/images/whale.jpg" alt="post from kirk_whalum">
+            </a>
+            <div class="actions">
+                <span class="likes">0 likes</span>
+                <span class="comment-count">0 comments</span>
+            </div>
+            <ul class="comments">
+                <li>
+                    <p>
+                        <span class="posterName">kirk_whalum</span>
+                        <span class="bodyText">: <span class="hashtag">#weekendvibes</span> </span>
+                    </p>
+                </li>
+            </ul>
+        </article>
+        
+        <article class="post">
+            <div class="user-info">
+                <a class="thumb" href="http://naserca.com/images/marlin_peppa.jpg">
+                    <img class="thumbnail" src="http://naserca.com/images/marlin_peppa.jpg" alt="marlin_peppa">
+                </a>
+                <h2 class="username">marlin_peppa</h2>
+                <h3 class="timeAgo">3 hours ago</h3>
+            </div>
+            <a class="photo" href="#">
+                <img src="http://naserca.com/images/marlin.jpg" alt="post from marlin_peppa">
+            </a>
+            <div class="actions">
+                <span class="likes">0 likes</span>
+                <span class="comment-count">0 comments</span>
+            </div>
+            <ul class="comments">
+                <li>
+                    <p>
+                        <span class="posterName">marlin_peppa</span>
+                        <span class="bodyText">: lunchtime! ;)</span>
+                    </p>
+                </li>
+            </ul>
+        </article>
+        
+        <article class="post">
+            <div class="user-info">
+                <a class="thumb" href="http://naserca.com/images/marlin_peppa.jpg">
+                    <img class="thumbnail" src="http://naserca.com/images/marlin_peppa.jpg" alt="marlin_peppa">
+                </a>
+                <h2 class="username">LuLuTheBear</h2>
+                <h3 class="timeAgo">6 hours ago</h3>
+            </div>
+            <a class="photo" href="#">
+                <img src="http://naserca.com/images/marlin.jpg" alt="post from marlin_peppa">
+            </a>
+            <div class="actions">
+                <span class="likes">99 likes</span>
+                <span class="comment-count">34 comments</span>
+            </div>
+            <ul class="comments">
+                <li>
+                    <p>
+                        <span class="posterName">bapes</span>
+                        <span class="bodyText">: boja! joba! ;)</span>
+                    </p>
+                </li>
+            </ul>
+        </article>
+        
+    </main>
